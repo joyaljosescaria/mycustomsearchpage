@@ -1,0 +1,15 @@
+button.btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #ca0000;
+    font-weight: 900;
+    cursor: pointer;
+    /* visibility: hidden; */
+    display: none;
+    display: hidden;
+}
+
+button.btn:hover{
+    display: block;
+}

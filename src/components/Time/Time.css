@@ -1,0 +1,8 @@
+h3{
+    color:white;
+    display: flex;
+    justify-content:center;
+    font-size: 3rem;
+    text-shadow: 2px 2px 2px #6a00c0;
+    letter-spacing: 5px;
+}
