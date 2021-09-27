@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './Search.css'
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -16,6 +16,11 @@ const Search = () => {
         return result;
     }
 
+    const inputEl = useRef(null);
+    const googleEl = useRef(null);
+    const youtubeEl = useRef(null);
+    const duckEl = useRef(null);
+
     const serachYoutube = () => {
         var word = getPlusWords();
         var link = `https://www.youtube.com/results?search_query=${word}`
@@ -25,6 +30,7 @@ const Search = () => {
 
     const searchGoogle = () => {
         var word = getPlusWords();
+        console.log(word)
         var link = `https://www.google.co.in/search?q=${word}`
         setGoogleLink(link)
     }
@@ -38,11 +44,11 @@ const Search = () => {
     return (
         <div className="serach-toop">
             <div className="search">
-                <input type="text" onChange={e => setTerm(e.target.value)} />
+                <input type="text" onChange={e => setTerm(e.target.value)}  />
                 <div className="btns">
-                    <a href={googlelink} style={{ background: "#619eff" }}><i className="fa fa-google" onClick={searchGoogle}></i></a>
-                    <a href={youtubelink} style={{ background: "#ff3434" }} onClick={serachYoutube}><i className="fa fa-youtube"></i></a>
-                    <a href={ducklink} style={{ background: "#rgb(73 , 173 , 22);" }} onClick={searchDuck}><i className="fa fa-search"></i></a>
+                    <a href={googlelink} ref={googleEl} style={{ background: "#619eff" }}><i className="fa fa-google" onClick={searchGoogle}></i></a>
+                    <a href={youtubelink} ref={youtubeEl} style={{ background: "#ff3434" }} onClick={serachYoutube}><i className="fa fa-youtube"></i></a>
+                    <a href={ducklink} ref={duckEl} style={{ background: "#rgb(73 , 173 , 22);" }} onClick={searchDuck}><i className="fa fa-search"></i></a>
                 </div>
             </div>
         </div>
