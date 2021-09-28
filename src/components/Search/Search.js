@@ -25,20 +25,23 @@ const Search = () => {
         var word = getPlusWords();
         var link = `https://www.youtube.com/results?search_query=${word}`
         console.log(link);
-        setYoutubeLink(link)
+        window.location.href = link
+        // setYoutubeLink(link)
     }
 
     const searchGoogle = () => {
         var word = getPlusWords();
         console.log(word)
         var link = `https://www.google.co.in/search?q=${word}`
-        setGoogleLink(link)
+        window.location.href = link
+        // setGoogleLink(link)
     }
 
     const searchDuck = () => {
         var word = getPlusWords();
         var link = `https://duckduckgo.com/?q=${word}`
-        setDuckLink(link)
+        // setDuckLink(link)
+        window.location.href = link
     }
 
     return (
